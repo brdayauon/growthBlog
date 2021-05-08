@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$growthBlog-app-primary: mat-palette($mat-blue-grey, 900);
+$growthBlog-app-accent: mat-palette($mat-red, A200);
+
+$growthBlog-app-warn: mat-palette($mat-red);
+
+$growthBlog-app-theme: mat-light-theme($growthBlog-app-primary, $growthBlog-app-accent, $growthBlog-app-warn);
+
+@include angular-material-theme($growthBlog-app-theme);
