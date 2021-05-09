@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
+import { AuthService } from 'src/app/core/auth.service';
 
 
 import {Post} from '../post'
@@ -12,11 +13,16 @@ import { PostService } from '../post.service';
 export class PostListComponent implements OnInit {
   posts: Observable<Post[]>
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, public auth: AuthService) { }
 
   ngOnInit(): void {
     this.posts = this.postService.getPosts()
     console.log(this)
+  }
+
+
+  delete(id: string){
+    this.postService.delete(id)
   }
 
 }

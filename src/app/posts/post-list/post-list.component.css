@@ -1,0 +1,22 @@
+section {
+    display: grid;
+    /* fill up array that is responsible */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    /* display same size */
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+
+    /* display center if not any posts */
+    margin: 0 auto;
+
+    max-width: 95%;
+}
+
+mat-card {
+    margin: 10px 0;
+    max-width: 700px;
+}
+img {
+    width: 100%;
+}

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 import { PostService } from '../post.service';
 
 import {Post} from '../post'
+import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -14,8 +15,12 @@ export class PostDetailComponent implements OnInit {
 
   post: Post 
 
+  editing: boolean = false
+
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
+    public auth: AuthService,
     private postService: PostService
   ) { }
 
@@ -29,4 +34,9 @@ export class PostDetailComponent implements OnInit {
     return this.postService.getPostData(id).subscribe(data => this.post = data)
   }
 
+  delete() {
+    const id = this.route.snapshot.paramMap.get('id')
+    this.postService.delete(id)
+    this.router.navigate(["/blog"])
+  }
 }
