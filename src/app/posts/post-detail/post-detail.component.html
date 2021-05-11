@@ -10,7 +10,7 @@
 <div [hidden]="!editing">
     <mat-card> 
         <h2>Update Post </h2>
-    <h1> Edit Mode</h1>
+    <!-- <h1> Edit Mode</h1> -->
     <mat-form-field>
         <input matInput placeholder="Post Title" [(ngModel)]="post.title">
     </mat-form-field> <br>
@@ -26,9 +26,9 @@
 </div>
 
 <div [hidden]="editing">
-    <h1> View Mode </h1>
+    <h1>  {{post.title}} </h1>
     <mat-card>
-        <img src ="{{post.image}}" alt = "{{post.title}}">
+        <img mat-card-image src ="{{post.image}}" alt = "{{post.title}}">
         <p> posted by {{post.author}} &bull; {{post.published.seconds * 1000 | date: 'fullDate'}}</p> 
     
         <mat-card-content>
