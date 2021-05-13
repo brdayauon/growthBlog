@@ -13,15 +13,18 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { PostsModule } from './posts/posts.module';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/blog', pathMatch: 'full'},
-  { path: '', loadChildren: './posts/posts.module#PostsModule'}
+  { path: '', loadChildren: './posts/posts.module#PostsModule'},
+  { path: 'about', component: AboutComponent}
 ]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

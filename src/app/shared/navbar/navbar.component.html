@@ -2,6 +2,11 @@
     <mat-toolbar-row>
         <span routerLink="/blog">Growth Blog</span>
         <span class="spacer"> </span>
+        
+        <div>
+            <button mat-button routerLink="/about"> About</button>
+        </div>
+
         <div *ngIf="auth.afAuth.authState | async as user; else showLogin"> 
             <button mat-raised-button color="accent" routerLink="/dashboard"> Write a Post </button>
             <button mat-button (click)="auth.logout()"> Logout</button>

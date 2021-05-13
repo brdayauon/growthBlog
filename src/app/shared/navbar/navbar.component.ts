@@ -7,9 +7,16 @@ import { AuthService } from '../../core/auth.service'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  aboutBtnStyle: string;
+
+  constructor(public auth: AuthService) { 
+    this.aboutBtnStyle = 'about-btn-style';
+  }
 
   ngOnInit(): void {
   }
 
+  about(){
+    console.log("about clicked on!")
+  }
 }
