@@ -1,0 +1,7 @@
+(Storing) IMAGE PROBLEM)The path was overwriting every time because I wasn't creating a new ID.
+
+(Creating new Screen cause of routing issue) 
+    - in app.module.ts i need to import aboutComponent. 
+    - in routes[] need to define path: and component where it is from. 
+    - create the button on the navbar (.html) 
+        <button mat-button routerLink="/about"> About</button>
