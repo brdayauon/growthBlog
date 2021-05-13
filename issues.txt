@@ -1,7 +1,13 @@
 (Storing) IMAGE PROBLEM)The path was overwriting every time because I wasn't creating a new ID.
 
-(Creating new Screen cause of routing issue) 
+(Creating new Screen cause of routing issue) 2/12
     - in app.module.ts i need to import aboutComponent. 
     - in routes[] need to define path: and component where it is from. 
     - create the button on the navbar (.html) 
         <button mat-button routerLink="/about"> About</button>
+
+(Deploying to host on Firebase)
+    - after finishing/updating project.
+        - ng build
+        - firebase deploy 
+        https://github.com/coreui/coreui-react/issues/55 look at this issue
